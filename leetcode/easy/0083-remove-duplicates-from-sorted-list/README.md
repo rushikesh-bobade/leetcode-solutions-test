@@ -34,28 +34,37 @@ Output: [1,2,3]
 
 ## Solution
 
-**Language:** Python  
-**Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 19.1 MB (beats 99.19%)  
-**Submitted:** 2026-09-09T13:34:56.290Z  
+**Language:** Java  
+**Runtime:** 0 ms  
+**Memory:** 42.7 MB  
+**Submitted:** 2026-09-09T13:35:24.183Z  
 
-```py
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
-class Solution:
-    def deleteDuplicates(self, head):
-        current = head
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode deleteDuplicates(ListNode head) {
+        ListNode current = head;
 
-        while current and current.next:
-            if current.val == current.next.val:
-                current.next = current.next.next
-            else:
-                current = current.next
+        while (current != null && current.next != null) {
+            if (current.val == current.next.val) {
+                current.next = current.next.next;
+            } else {
+                current = current.next;
+            }
+        }
 
-        return head
+        return head;
+    }
+}
 ```
 
 ---
