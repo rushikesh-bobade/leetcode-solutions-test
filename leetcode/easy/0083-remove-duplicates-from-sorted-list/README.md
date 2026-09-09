@@ -34,36 +34,28 @@ Output: [1,2,3]
 
 ## Solution
 
-**Language:** JavaScript  
+**Language:** Python  
 **Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 58.5 MB (beats 8.00%)  
-**Submitted:** 2026-09-09T13:32:11.048Z  
+**Memory:** 19.1 MB (beats 99.19%)  
+**Submitted:** 2026-09-09T13:34:56.290Z  
 
-```js
-/**
- * Definition for singly-linked list.
- * function ListNode(val, next) {
- *     this.val = (val===undefined ? 0 : val)
- *     this.next = (next===undefined ? null : next)
- * }
- */
-/**
- * @param {ListNode} head
- * @return {ListNode}
- */
-var deleteDuplicates = function(head) {
-    let current = head;
+```py
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def deleteDuplicates(self, head):
+        current = head
 
-    while (current !== null && current.next !== null) {
-        if (current.val === current.next.val) {
-            current.next = current.next.next;
-        } else {
-            current = current.next;
-        }
-    }
+        while current and current.next:
+            if current.val == current.next.val:
+                current.next = current.next.next
+            else:
+                current = current.next
 
-    return head;
-};
+        return head
 ```
 
 ---
